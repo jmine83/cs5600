@@ -1,0 +1,24 @@
+     PLA Cross Validation Result
+*************************************
+Samples = 100
+Cross Validation
+  # of Random Splits = 10
+  Training Set % of Samples = 80% = 80
+  Test Set % of Samples = 20% = 20
++++++++++++++++++++++++++++++++++++++
+
+           Accuracy Results
+-------------------------------------
+  Test Run     Accuracy on Test Set
+-------------------------------------
+      1                  60%
+      2                  80%
+      3                  55%
+      4                  65%
+      5                  70%
+      6                  65%
+      7                  65%
+      8                  65%
+      9                  50%
+     10                  65%
++++++++++++++++++++++++++++++++++++++

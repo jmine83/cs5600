@@ -1,0 +1,31 @@
+        HIV-1 Schilling Data
+*************************************
+aa1, aa2, aa3, aa4, aa5, aa6, aa7, aa8: The amino acid sequence of the sample octamer.
+>> Each amino acid can be one of 20 possible values.
+Cleaves: Does the HIV-1 protease cleave? _ Yes or No
+*************************************
+
+              Data Set
+-------------------------------------
+Samples = 3272
+Cross Validation
+  # of Random Splits = 10
+  Training Set % of Samples = 80% = 2618
+  Test Set % of Samples = 20% = 654
++++++++++++++++++++++++++++++++++++++
+
+           Accuracy Results
+-------------------------------------
+  Test Run     Accuracy on Test Set
+-------------------------------------
+      1               79.05%
+      2               79.82%
+      3               59.79%
+      4               83.33%
+      5               81.19%
+      6               87.46%
+      7               83.79%
+      8               85.63%
+      9                86.7%
+     10               82.57%
++++++++++++++++++++++++++++++++++++++

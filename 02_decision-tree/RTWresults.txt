@@ -1,0 +1,195 @@
+      Restaurant Table Waiting
+*************************************
+Alt: Is there a sutiable alternative restaurant nearby? _ Yes or No
+Bar: Does the restaurant have a comfortable bar area to wait in? _ Yes or No
+Fri: Is it a Friday or Saturda ? _ Yes or No
+Hun: Is the patron hungry? _ Yes or No
+Pat: How many people are in the restaurant? _ None, Some, Full
+Price: What is the restaurant price range? _ $, $$, $$$
+Rain: Is it raining outside? _ Yes or No
+Res: Was a reservation made? _ Yes or No
+Type: What kind of restaurant is it? _ French, Italian, Thai, Burger
+Est: What is the estimated wait time (in minutes)? _ 0-10, 10-30, 30-60, >60
+WillWait: Will patron wait for a table? _ Yes or No
+*************************************
+
+            Training Set
+-------------------------------------
+Sample #1
+Alt = Yes
+Bar = No
+Fri = No
+Hun = Yes
+Pat = Some
+Price = $$$
+Rain = No
+Res = Yes
+Type = French
+Est = 0-10
+WillWait = Yes
+
+Sample #2
+Alt = Yes
+Bar = No
+Fri = No
+Hun = Yes
+Pat = Full
+Price = $
+Rain = No
+Res = No
+Type = Thai
+Est = 30-60
+WillWait = No
+
+Sample #3
+Alt = No
+Bar = Yes
+Fri = No
+Hun = No
+Pat = Some
+Price = $
+Rain = No
+Res = No
+Type = Burger
+Est = 0-10
+WillWait = Yes
+
+Sample #4
+Alt = Yes
+Bar = No
+Fri = Yes
+Hun = Yes
+Pat = Full
+Price = $
+Rain = Yes
+Res = No
+Type = Thai
+Est = 10-30
+WillWait = Yes
+
+Sample #5
+Alt = Yes
+Bar = No
+Fri = Yes
+Hun = No
+Pat = Full
+Price = $$$
+Rain = No
+Res = Yes
+Type = French
+Est = >60
+WillWait = No
+
+Sample #6
+Alt = No
+Bar = Yes
+Fri = No
+Hun = Yes
+Pat = Some
+Price = $$
+Rain = Yes
+Res = Yes
+Type = Italian
+Est = 0-10
+WillWait = Yes
+
+Sample #7
+Alt = No
+Bar = Yes
+Fri = No
+Hun = No
+Pat = None
+Price = $
+Rain = Yes
+Res = No
+Type = Burger
+Est = 0-10
+WillWait = No
+
+Sample #8
+Alt = No
+Bar = No
+Fri = No
+Hun = Yes
+Pat = Some
+Price = $$
+Rain = Yes
+Res = Yes
+Type = Thai
+Est = 0-10
+WillWait = Yes
+
+Sample #9
+Alt = No
+Bar = Yes
+Fri = Yes
+Hun = No
+Pat = Full
+Price = $
+Rain = Yes
+Res = No
+Type = Burger
+Est = >60
+WillWait = No
+
+Sample #10
+Alt = Yes
+Bar = Yes
+Fri = Yes
+Hun = Yes
+Pat = Full
+Price = $$$
+Rain = No
+Res = Yes
+Type = Italian
+Est = 10-30
+WillWait = No
+
+Sample #11
+Alt = No
+Bar = No
+Fri = No
+Hun = No
+Pat = None
+Price = $
+Rain = No
+Res = No
+Type = Thai
+Est = 0-10
+WillWait = No
+
+Sample #12
+Alt = Yes
+Bar = Yes
+Fri = Yes
+Hun = Yes
+Pat = Full
+Price = $
+Rain = No
+Res = No
+Type = Burger
+Est = 30-60
+WillWait = Yes
++++++++++++++++++++++++++++++++++++++
+            Decision Tree
+-------------------------------------
+Root = Pat
+Branch of NULL on NULL
+  Leaf = None; Class = No; Sample #s = 7 11 
+  Leaf = Some; Class = Yes; Sample #s = 1 3 6 8 
+
+Root = Hun
+Branch of Pat on Full
+  Leaf = No; Class = No; Sample #s = 5 9 
+
+Root = Type
+Branch of Hun on Yes
+  Leaf = French; Class = Yes; Sample #s = 
+  Leaf = Italian; Class = No; Sample #s = 10 
+  Leaf = Burger; Class = Yes; Sample #s = 12 
+
+Root = Fri
+Branch of Type on Thai
+  Leaf = No; Class = No; Sample #s = 2 
+  Leaf = Yes; Class = Yes; Sample #s = 4 
++++++++++++++++++++++++++++++++++++++
